@@ -91,7 +91,7 @@ function processLastItem(stringList, callback) {
 */
 
 function processSum(num1, num2, callback) {
-  return callback(num1 * num2);
+  return callback(num1 + num2);
 }
 
 /**
@@ -112,10 +112,9 @@ function processSum(num1, num2, callback) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
-  /* CODE HERE */
+function processSum(num1, num2, callback) {
+  return callback(num1 * num2);
 }
-
 /**
  * ### Challenge `processDuplicateFree`
  * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
