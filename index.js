@@ -162,7 +162,7 @@ function processDuplicateFree(list) {
   const newArray = list.filter((a, b) => list.indexOf(a) === b);
   console.log(newArray);
   console.log(newArray.length);
-};
+}; 
 
 processDuplicateFree(numbers);
 
