@@ -90,8 +90,7 @@ function processSum(num1, num2, callback) {
 }
 
 //Actual use-case scenario:
-
-const firstNumber = 3;
+const firstNumber = 5;
 const secondNumber = 3; 
 
 function processSum(num1, num2) {
@@ -124,7 +123,6 @@ function processSum(num1, num2, callback) {
 }
 
 //Actual use-case scenario:
-
 const firstNumber = 3;
 const secondNumber = 3; 
 
@@ -152,10 +150,13 @@ processSum(firstNumber, secondNumber);
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
-}
 
+function processDuplicateFree(list) {
+  const newArray = list.filter((a, b) => list.indexOf(a) === b);
+  return newArray;
+}; 
+
+//Actual use-case scenario:
 const numbers = [1,1,1,2];
 
 function processDuplicateFree(list) {
@@ -184,11 +185,23 @@ processDuplicateFree(numbers);
  * 
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
+
 function lowerCaseStrings(strings) {
   const lowerCase = [];
   strings.forEach(string => lowerCase.push(string.toLowerCase())); 
   return lowerCase;
 }
+
+//Actual use-case scenario:
+const iDontLikeCaps = ['Orange', 'APPLE', 'banana', 'mAnGo'];
+
+function lowerCaseStrings(strings) {
+  const lowerCase = [];
+  strings.forEach(string => lowerCase.push(string.toLowerCase())); 
+  console.log(lowerCase);
+}
+
+lowerCaseStrings(iDontLikeCaps);
 
 /**
  * ### Challenge `isItAnApple`
@@ -206,9 +219,18 @@ function lowerCaseStrings(strings) {
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
 
-//For testing purposes, just having some fun with these FUNctions 😂
+function isItAnApple(strings) {
+  const isItThough = strings.map((boolean) => {
+    if (boolean === "apple") return true;
+    else return false;
+  });
+ return isItThough;
+}
 
-const apples = [ 'Orange', 'apple', 'banana', 'mAnGo']
+
+//For testing purposes, just having some fun with these FUNctions 😂
+//Actual use-case scenario:
+const apples = [ 'Orange', 'apple', 'banana', 'mAnGo'];
 
 function isItAnApple(strings) {
   const isItThough = strings.map((boolean) => {
@@ -237,7 +259,12 @@ isItAnApple(apples);
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
 
-const apples = [ 'Orange', 'apple', 'banana', 'mAnGo']
+function removeApple(strings) {
+  return strings.filter(string => string !== 'apple');
+}
+
+//Actual use-case scenario:
+const apples = [ 'Orange', 'apple', 'banana', 'mAnGo'];
 
 function removeApple(strings) {
   console.log(strings.filter(string => string !== 'apple')); //Could just return, but I like to have it log.
@@ -261,7 +288,12 @@ removeApple(apples);
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
 
-const willBeSmashed = [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ]
+function stringSmash(strings) {
+  return strings.reduce((total, item) => { return total += item });
+}
+
+//Actual use-case scenario:
+const willBeSmashed = [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ];
 
 function stringSmash(strings) {
   console.log(strings.reduce((total, item) => { return total += item }));
@@ -336,8 +368,7 @@ const zoomers = [
   { id: 47, first_name: "Vida", last_name: "Tydd", email: "vtydd1a@dropbox.com", shirt_size: "S", company_name: "Quaxo", donation: 55 },
   { id: 48, first_name: "Anderea", last_name: "MacGiolla Pheadair", email: "amacgiollapheadair1b@xing.com", shirt_size: "2XL", company_name: "Kwimbee", donation: 214 },
   { id: 49, first_name: "Bel", last_name: "Alway", email: "balway1c@ow.ly", shirt_size: "S", company_name: "Voolia", donation: 107 },
-  { id: 50, first_name: "Shell", last_name: "Baine", email: "sbaine1d@intel.com", shirt_size: "M", company_name: "Gabtype", donation: 171 },
-]
+  { id: 50, first_name: "Shell", last_name: "Baine", email: "sbaine1d@intel.com", shirt_size: "M", company_name: "Gabtype", donation: 171 }, ];
 
 function getFullNames(runners) {
   const fullNames = [];
@@ -346,6 +377,14 @@ function getFullNames(runners) {
 }
 
 getFullNames(zoomers);
+
+//Or simply:
+function getFullNames(runners) {
+  const fullNames = [];
+  runners.forEach((runner) => {return fullNames.push(`${runner.last_name}, ${runner.first_name}`); });
+  return fullNames;
+}
+
 
 /**
  * ### Challenge `firstNamesAllCaps`
@@ -360,6 +399,7 @@ getFullNames(zoomers);
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
 
+//Actual use-case scenario:
 const zoomers = []; //Same array as above, didn't think it would be smart to copy-paste it again.
 
 function firstNamesAllCaps(runners) {
