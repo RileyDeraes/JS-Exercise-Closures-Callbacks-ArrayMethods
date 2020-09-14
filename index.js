@@ -214,9 +214,14 @@ isItAnApple(apples);
  * 
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function removeApple(/* code here */) {
-  /* code here */
+
+const apples = [ 'Orange', 'apple', 'banana', 'mAnGo']
+
+function removeApple(strings) {
+  console.log(strings.filter(string => string !== 'apple')); //Could just return, but I like to have it log.
 }
+
+removeApple(apples);
 
 /**
  * ### Challenge `stringSmash`
@@ -233,9 +238,14 @@ function removeApple(/* code here */) {
  * 
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
-function stringSmash(/* code here */) {
-  /* code here */
+
+const willBeSmashed = [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ]
+
+function stringSmash(strings) {
+  console.log(strings.reduce((total, item) => { return total += item }));
 }
+
+stringSmash(willBeSmashed);
 
 // A local community center is holding a fund raising 5k fun run and has invited
 // 50 small businesses to make a small donation on their behalf for some much needed
