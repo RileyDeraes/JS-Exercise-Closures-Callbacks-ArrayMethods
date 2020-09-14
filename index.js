@@ -112,9 +112,11 @@ function processSum(num1, num2, callback) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
+
 function processSum(num1, num2, callback) {
   return callback(num1 * num2);
 }
+
 /**
  * ### Challenge `processDuplicateFree`
  * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
@@ -137,6 +139,10 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
 }
 
+function processDuplicateFree(list, callback) {
+ //Placeholder for later return callback(list.deduped);
+}
+
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
 
@@ -156,8 +162,10 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * 
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function lowerCaseStrings(/* code here */) {
-  /* code here */
+function lowerCaseStrings(strings) {
+  const lowerCase = [];
+  strings.forEach(string => lowerCase.push(string.toLowerCase())); 
+  return lowerCase;
 }
 
 /**
@@ -175,9 +183,20 @@ function lowerCaseStrings(/* code here */) {
  * 
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+
+//For testing purposes, just having some fun with these FUNctions 😂
+
+const apples = [ 'Orange', 'apple', 'banana', 'mAnGo']
+
+function isItAnApple(strings) {
+  const isItThough = strings.map((boolean) => {
+    if (boolean === "apple") return true;
+    else return false;
+  });
+ console.log(isItThough);
 }
+
+isItAnApple(apples);
 
 /**
  * ### Challenge `removeApple`
