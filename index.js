@@ -20,19 +20,14 @@ function processFirstItem(stringList, callback) {
 
 // ⭐️ Example Challenge END ⭐️
 
-
-// 👇 COMPLETE YOUR WORK BELOW 👇
-// 👇 COMPLETE YOUR WORK BELOW 👇
 // 👇 COMPLETE YOUR WORK BELOW 👇
 
-/////////////// CALLBACKS AND HIGHER-ORDER FUNCTIONS ///////////////
 /////////////// CALLBACKS AND HIGHER-ORDER FUNCTIONS ///////////////
 
 /**
  * ### Challenge `processLength`
  * 
  * @instructions
- * PLEASE STUDY THE EXAMPLE CHALLENGE THOROUGHLY BEFORE PROCEEDING!
  * PLEASE STUDY THE EXAMPLE CHALLENGE THOROUGHLY BEFORE PROCEEDING!
  * 
  * Implement a higher-order function called `processLength`.
@@ -94,6 +89,17 @@ function processSum(num1, num2, callback) {
   return callback(num1 + num2);
 }
 
+//Actual use-case scenario:
+
+const firstNumber = 3;
+const secondNumber = 3; 
+
+function processSum(num1, num2) {
+  console.log(num1 + num2);
+}
+
+processSum(firstNumber, secondNumber);
+
 /**
  * ### Challenge `processProduct`
  * 
@@ -117,6 +123,17 @@ function processSum(num1, num2, callback) {
   return callback(num1 * num2);
 }
 
+//Actual use-case scenario:
+
+const firstNumber = 3;
+const secondNumber = 3; 
+
+function processSum(num1, num2) {
+  console.log(num1 * num2);
+}
+
+processSum(firstNumber, secondNumber);
+
 /**
  * ### Challenge `processDuplicateFree`
  * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
@@ -139,11 +156,16 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
 }
 
-function processDuplicateFree(list, callback) {
- //Placeholder for later return callback(list.deduped);
-}
+const numbers = [1,1,1,2];
 
-/////////////// HIGHER-ORDER ARRAY METHODS ///////////////
+function processDuplicateFree(list) {
+  const newArray = list.filter((a, b) => list.indexOf(a) === b);
+  console.log(newArray);
+  console.log(newArray.length);
+};
+
+processDuplicateFree(numbers);
+
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
 
 
@@ -338,7 +360,7 @@ getFullNames(zoomers);
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
 
-//Same array as above, didn't think it would be smart to copy-paste it again.
+const zoomers = []; //Same array as above, didn't think it would be smart to copy-paste it again.
 
 function firstNamesAllCaps(runners) {
   console.log(runners.map((item) => { return item.first_name.toUpperCase(); }));
@@ -346,41 +368,6 @@ function firstNamesAllCaps(runners) {
 
 firstNamesAllCaps(zoomers);
 
-
-/**
- * ### Challenge `getRunnersByTShirtSize`
- * * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
- * 
- * @instructions
- * The event director needs a way to find the runners that need
- * a specific t-shirt size, so they can place the orders easily.
- * Implement this function using filter().
- * 
- * @param runners array of runners like the one inside the /data/runners.js file.
- * @param tShirtSize string (possible values are "S", "M", "L", "XL", "2XL", "3XL").
- * @returns an array containing only the runners that use the given `tShirtSize`.
- * The runners in the array appear in the same order they appear in the `runners` array.
-*/
-function getRunnersByTShirtSize(/* CODE HERE */) {
-  /* CODE HERE */
-}
-
-/**
- * ### Challenge `tallyUpDonations`
- *  * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
- * 
- * @instructions
- * The donations need to be tallied up and reported for tax purposes.
- * Implement this function using reduce().
- * 
- * @param runners array of runners like the one inside the /data/runners.js file.
- * @returns a number which is the sum of the donations by all runners.
-*/
-function tallyUpDonations(/* CODE HERE */) {
-  /* CODE HERE */
-}
-
-/////////////// CLOSURES ///////////////
 /////////////// CLOSURES ///////////////
 
 /**
@@ -414,33 +401,8 @@ function counter2() {
   return count++;
 }
 
-/**
- * ### Challenge `counterMakerWithLimit`
- * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
- * 
- * @instructions
- * Implement a counter maker that takes a max value for the count.
- * A counter created with it will reset itself after reaching the max value.
- * Usage is as follows:
- * 
- * const counter = counterMakerWithLimit(3)
- * counter() // should return 0
- * counter() // should return 1
- * counter() // should return 2
- * counter() // should return 3
- * counter() // should return 0
- * counter() // should return 1
- * counter() // should return 2
- * counter() // should return 3
- * counter() // should return 0
- * etc
-*/
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
-}
 
-/////////////// END OF CHALLENGE ///////////////
-/////////////// END OF CHALLENGE ///////////////
+
 /////////////// END OF CHALLENGE ///////////////
 
 if (typeof exports !== 'undefined') {
