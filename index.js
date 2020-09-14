@@ -399,6 +399,10 @@ function getFullNames(runners) {
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
 
+function firstNamesAllCaps(runners) {
+  return runners.map((item) => { return item.first_name.toUpperCase(); });
+}
+
 //Actual use-case scenario:
 const zoomers = []; //Same array as above, didn't think it would be smart to copy-paste it again.
 
@@ -418,9 +422,16 @@ firstNamesAllCaps(zoomers);
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ *  -In counter 1, the variable count is inside of the function. in counter 2, it's outside of the function.
+ * 
  * 2. Which of the two uses a closure? How can you tell?
  * 
+ *  -Counter 1, because it's reaching outside of itself into its parent's scope. Both are still functions though, not globally like counter 2.
+ * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * 
+ *  -Counter 2 would be better if you frequently need to use reference/redefine the variable count. 
+ *  -Counter 1 would be better if you don't want anything except for the function to change the variable count.
  *
 */
 
@@ -440,7 +451,6 @@ let count = 0;
 function counter2() {
   return count++;
 }
-
 
 
 /////////////// END OF CHALLENGE ///////////////
