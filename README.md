@@ -1,3 +1,5 @@
+### I MESSED UP, THIS IS THE ACTUAL CORRECT LINK FOR THE ASSIGNMENT: https://github.com/RileyDeraes/Array-Methods-and-Callbacks/tree/Riley-Deraes 
+
 # Closures, Callbacks and Array Methods
 
 This challenge focuses on closures, callbacks and array methods.
